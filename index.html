@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CB Coaching - Elite Skateboarding Mentorship by Cara-Beth Burnside</title>
     <meta name="description" content="Transform your skateboarding with legendary coach Cara-Beth Burnside. Premium 1-on-1 coaching for serious athletes ready to go pro.">
+    <link rel="preload" href="media/cb.png" as="image">
+    <link rel="preload" href="media/cbNoBG.png" as="image">
     <style>
         :root {
             --dark-grey: #2c3e44;
@@ -33,6 +35,109 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+        }
+
+        /* Splash Screen */
+        .splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            animation: fadeIn 0.5s forwards;
+            overflow: hidden;
+        }
+
+        .splash-full,
+        .splash-cutout {
+            position: absolute;
+            max-width: 90%;
+            max-height: 90%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.1));
+        }
+
+        .splash-full {
+            opacity: 0;
+            animation: fadeInImage 0.8s 0.5s forwards;
+        }
+
+        .splash-cutout {
+            opacity: 0;
+        }
+
+        /* Animation Classes */
+        .splash-full.fade-out {
+            animation: fadeOutImage 0.8s forwards;
+        }
+
+        .splash-cutout.show {
+            opacity: 1;
+        }
+
+        .splash-cutout.skate-away {
+            animation: skateAway 1.5s cubic-bezier(0.4, 0.0, 0.6, 1) forwards;
+        }
+
+        .splash-screen.fade-out {
+            animation: fadeOut 0.5s forwards;
+        }
+
+        /* Keyframes */
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeOut {
+            to { opacity: 0; }
+        }
+
+        @keyframes fadeInImage {
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeOutImage {
+            to { opacity: 0; }
+        }
+
+        @keyframes skateAway {
+            0% {
+                transform: translate(0, 0) rotate(0deg) scale(1);
+                opacity: 1;
+            }
+            20% {
+                transform: translate(-10%, -5%) rotate(-5deg) scale(1.05);
+                opacity: 1;
+            }
+            40% {
+                transform: translate(-25%, 0%) rotate(-10deg) scale(1);
+                opacity: 1;
+            }
+            60% {
+                transform: translate(-40%, 25%) rotate(-20deg) scale(0.95);
+                opacity: 1;
+            }
+            80% {
+                transform: translate(-80%, 70%) rotate(-30deg) scale(0.8);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translate(-150%, 150%) rotate(-40deg) scale(0.6);
+                opacity: 0;
+            }
+        }
+
+        /* Hide body scroll during splash */
+        body.splash-active {
+            overflow: hidden;
         }
 
         /* Header */
@@ -524,10 +629,50 @@
             .footer-content {
                 flex-direction: column;
             }
+
+            /* Splash screen mobile adjustments */
+            .splash-full,
+            .splash-cutout {
+                max-width: 80%;
+                max-height: 70%;
+            }
+
+            @keyframes skateAway {
+                0% {
+                    transform: translate(0, 0) rotate(0deg) scale(1);
+                    opacity: 1;
+                }
+                20% {
+                    transform: translate(-8%, -3%) rotate(-5deg) scale(1.05);
+                    opacity: 1;
+                }
+                40% {
+                    transform: translate(-20%, 5%) rotate(-10deg) scale(1);
+                    opacity: 1;
+                }
+                60% {
+                    transform: translate(-35%, 35%) rotate(-20deg) scale(0.9);
+                    opacity: 1;
+                }
+                80% {
+                    transform: translate(-70%, 90%) rotate(-30deg) scale(0.7);
+                    opacity: 0.8;
+                }
+                100% {
+                    transform: translate(-120%, 180%) rotate(-40deg) scale(0.5);
+                    opacity: 0;
+                }
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Splash Screen -->
+    <div class="splash-screen" id="splashScreen">
+        <img src="media/cb.png" class="splash-full" id="splashFull" alt="CB Thrasher Cover">
+        <img src="media/cbNoBG.png" class="splash-cutout" id="splashCutout" alt="CB Skating">
+    </div>
+
     <!-- Header -->
     <header>
         <nav class="container">
@@ -695,15 +840,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="video-container">
-                        <video 
-                            controls
-                            poster=""
-                            preload="metadata">
-                            <source src="media/onFormExample.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
+                <div class="image-placeholder">
+                    Video Analysis Demo
+                </div>
             </div>
         </div>
     </section>
@@ -777,6 +916,78 @@
     </footer>
 
     <script>
+        // Splash Screen Animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const splashScreen = document.getElementById('splashScreen');
+            const splashFull = document.getElementById('splashFull');
+            const splashCutout = document.getElementById('splashCutout');
+            const body = document.body;
+
+            // Check if splash has been shown in this session
+            const splashShown = sessionStorage.getItem('splashShown');
+            
+            if (!splashShown) {
+                // Add class to prevent scrolling
+                body.classList.add('splash-active');
+
+                // Ensure images are loaded before starting animation
+                let imagesLoaded = 0;
+                const totalImages = 2;
+
+                function imageLoaded() {
+                    imagesLoaded++;
+                    if (imagesLoaded === totalImages) {
+                        startAnimation();
+                    }
+                }
+
+                function startAnimation() {
+                    // Animation sequence
+                    setTimeout(() => {
+                        // Fade out full image and show cutout
+                        splashFull.classList.add('fade-out');
+                        splashCutout.classList.add('show');
+                    }, 2000);
+
+                    setTimeout(() => {
+                        // Make cutout skate away
+                        splashCutout.classList.add('skate-away');
+                    }, 2800);
+
+                    setTimeout(() => {
+                        // Fade out splash screen
+                        splashScreen.classList.add('fade-out');
+                    }, 4100);
+
+                    setTimeout(() => {
+                        // Remove splash screen and allow scrolling
+                        splashScreen.style.display = 'none';
+                        body.classList.remove('splash-active');
+                        // Mark splash as shown for this session
+                        sessionStorage.setItem('splashShown', 'true');
+                    }, 4600);
+                }
+
+                // Check if images are already loaded
+                if (splashFull.complete) imageLoaded();
+                else splashFull.addEventListener('load', imageLoaded);
+
+                if (splashCutout.complete) imageLoaded();
+                else splashCutout.addEventListener('load', imageLoaded);
+
+                // Fallback in case images fail to load
+                setTimeout(() => {
+                    if (imagesLoaded < totalImages) {
+                        splashScreen.style.display = 'none';
+                        body.classList.remove('splash-active');
+                    }
+                }, 5000);
+            } else {
+                // If already shown, hide splash immediately
+                splashScreen.style.display = 'none';
+            }
+        });
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
