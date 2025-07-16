@@ -34,12 +34,12 @@ document.addEventListener('DOMContentLoaded', function () {
             setTimeout(() => {
                 // Make cutout skate away
                 splashCutout.classList.add('skate-away');
-            }, 2800);
+            }, 3200);
 
             setTimeout(() => {
                 // Fade out splash screen
                 splashScreen.classList.add('fade-out');
-            }, 4100);
+            }, 5400);
 
             setTimeout(() => {
                 // Remove splash screen and allow scrolling
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 body.classList.remove('splash-active');
                 // Mark splash as shown for this session
                 sessionStorage.setItem('splashShown', 'true');
-            }, 4600);
+            }, 5900);
         }
 
         // Check if images are already loaded

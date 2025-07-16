@@ -57,7 +57,7 @@ body {
 
 .splash-full {
     opacity: 0;
-    animation: fadeInImage 0.8s 0.5s forwards;
+    animation: fadeInImage 0.5s 0.3s forwards;
 }
 
 .splash-cutout {
@@ -66,7 +66,7 @@ body {
 
 /* Animation Classes */
 .splash-full.fade-out {
-    animation: fadeOutImage 0.8s forwards;
+    animation: fadeOutImage 0.2s forwards;
 }
 
 .splash-cutout.show {
@@ -74,11 +74,11 @@ body {
 }
 
 .splash-cutout.skate-away {
-    animation: skateAway 1.5s cubic-bezier(0.4, 0.0, 0.6, 1) forwards;
+    animation: skateAway 1s cubic-bezier(0.4, 0.0, 0.6, 1) forwards;
 }
 
 .splash-screen.fade-out {
-    animation: fadeOut 0.5s forwards;
+    animation: fadeOut 0.2s forwards;
 }
 
 /* Keyframes */
@@ -112,28 +112,52 @@ body {
         opacity: 1;
     }
 
+    5% {
+        transform: translate(-3%, -1%) rotate(-1deg) scale(1);
+    }
+
+    10% {
+        transform: translate(-6%, -2%) rotate(-3deg) scale(1);
+    }
+
     20% {
-        transform: translate(-10%, -5%) rotate(-5deg) scale(1.05);
+        transform: translate(-8%, -3%) rotate(-5deg) scale(1.05);
         opacity: 1;
+    }
+
+    30% {
+        transform: translate(-16%, 2%) rotate(-7deg) scale(1)
     }
 
     40% {
-        transform: translate(-25%, 0%) rotate(-10deg) scale(1);
+        transform: translate(-20%, 5%) rotate(-10deg) scale(1);
         opacity: 1;
+    }
+
+    50% {
+        transform: translate(-27%, 20%) rotate(-15deg) scale(1)
     }
 
     60% {
-        transform: translate(-40%, 25%) rotate(-20deg) scale(0.95);
+        transform: translate(-35%, 35%) rotate(-20deg) scale(0.9);
         opacity: 1;
     }
 
+    70% {
+        transform: translate(-50%, 60%) rotate(-25deg) scale(1)
+    }
+
     80% {
-        transform: translate(-80%, 70%) rotate(-30deg) scale(0.8);
+        transform: translate(-70%, 90%) rotate(-30deg) scale(0.7);
         opacity: 0.8;
     }
 
+    90% {
+        transform: translate(-100%, 140%) rotate(-35deg) scale(1)
+    }
+
     100% {
-        transform: translate(-150%, 150%) rotate(-40deg) scale(0.6);
+        transform: translate(-120%, 180%) rotate(-40deg) scale(0.5);
         opacity: 0;
     }
 }
@@ -653,9 +677,21 @@ footer {
             opacity: 1;
         }
 
+        5% {
+            transform: translate(-3%, -1%) rotate(-1deg) scale(1);
+        }
+
+        10% {
+            transform: translate(-6%, -2%) rotate(-3deg) scale(1);
+        }
+
         20% {
             transform: translate(-8%, -3%) rotate(-5deg) scale(1.05);
             opacity: 1;
+        }
+
+        30% {
+            transform: translate(-16%, 2%) rotate(-7deg) scale(1)
         }
 
         40% {
@@ -663,14 +699,26 @@ footer {
             opacity: 1;
         }
 
+        50% {
+            transform: translate(-27%, 20%) rotate(-15deg) scale(1)
+        }
+
         60% {
             transform: translate(-35%, 35%) rotate(-20deg) scale(0.9);
             opacity: 1;
         }
 
+        70% {
+            transform: translate(-50%, 60%) rotate(-25deg) scale(1)
+        }
+
         80% {
             transform: translate(-70%, 90%) rotate(-30deg) scale(0.7);
             opacity: 0.8;
+        }
+
+        90% {
+            transform: translate(-100%, 140%) rotate(-35deg) scale(1)
         }
 
         100% {
