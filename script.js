@@ -145,6 +145,74 @@ document.querySelectorAll('section').forEach(section => {
     section.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
     observer.observe(section);
 });
+// Video player enhancement with iOS fallback
+document.querySelectorAll('.video-container video').forEach(video => {
+    // Ensure iOS compatibility
+    video.setAttribute('playsinline', '');
+    video.setAttribute('webkit-playsinline', '');
+    
+    // Add click to play/pause
+    video.addEventListener('click', function () {
+        if (video.paused) {
+            video.play();
+        } else {
+            video.pause();
+        }
+    });
+
+    // Add loading class while video loads
+    video.addEventListener('loadstart', function () {
+        video.parentElement.classList.add('loading');
+    });
+
+    video.addEventListener('canplay', function () {
+        video.parentElement.classList.remove('loading');
+    });
+    
+    // Handle iOS video errors
+    let errorCount = 0;
+    video.addEventListener('error', function(e) {
+        errorCount++;
+        console.error('Video error:', e, 'Attempt:', errorCount);
+        
+        // If video fails on iOS, show a message
+        if (errorCount >= 2) {
+            const container = video.parentElement;
+            container.innerHTML = `
+                <div style="
+                    background: #f8f9fa;
+                    padding: 40px;
+                    text-align: center;
+                    border-radius: 10px;
+                    min-height: 300px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                ">
+                    <div style="font-size: 3em; margin-bottom: 20px;">🎬</div>
+                    <h3 style="color: #2c3e44; margin-bottom: 10px;">Video Demo Coming Soon</h3>
+                    <p style="color: #666; max-width: 300px;">
+                        Check back shortly for CB's exclusive training preview
+                    </p>
+                </div>
+            `;
+        }
+    });
+    
+    // iOS-specific video initialization
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+    if (isIOS) {
+        // Try to preload the first frame
+        video.load();
+        
+        // Sometimes iOS needs a user interaction first
+        document.addEventListener('touchstart', function videoInit() {
+            video.load();
+            document.removeEventListener('touchstart', videoInit);
+        }, { once: true });
+    }
+});
 
 // Make showApplicationForm globally available
 window.showApplicationForm = showApplicationForm;
