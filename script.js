@@ -70,6 +70,54 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
+// Initialize Photo Carousel
+document.addEventListener('DOMContentLoaded', function() {
+    const carouselTrack = document.getElementById('carouselTrack');
+    
+    // Array of carousel images - add new image filenames here
+    const carouselImages = [
+        'cbInvert.jpeg',  
+        'cbProModel.jpeg',
+        'cbYoung.jpeg',
+        'cbHorse.jpeg',
+        'concreteWaveCover.jpeg'
+    ];
+    
+    // Create carousel items
+    function createCarouselItems() {
+        // Create two sets of images for seamless loop
+        for (let i = 0; i < 2; i++) {
+            carouselImages.forEach((image, index) => {
+                const item = document.createElement('div');
+                item.className = 'carousel-item';
+                
+                const img = document.createElement('img');
+                img.src = `media/carousel/${image}`;
+                img.alt = `CB Skateboarding ${index + 1}`;
+                img.loading = 'lazy';
+                
+                item.appendChild(img);
+                carouselTrack.appendChild(item);
+            });
+        }
+    }
+    
+    createCarouselItems();
+    
+    // Optional: Pause animation on hover for entire section
+    const carouselSection = document.querySelector('.photo-carousel-section');
+    if (carouselSection) {
+        carouselSection.addEventListener('mouseenter', () => {
+            carouselTrack.style.animationPlayState = 'paused';
+        });
+        
+        carouselSection.addEventListener('mouseleave', () => {
+            carouselTrack.style.animationPlayState = 'running';
+        });
+    }
+});
+
+
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
