@@ -71,18 +71,18 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // Initialize Photo Carousel
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const carouselTrack = document.getElementById('carouselTrack');
-    
+
     // Array of carousel images - add new image filenames here
     const carouselImages = [
-        'cbInvert.jpeg',  
+        'cbInvert.jpeg',
         'cbProModel.jpeg',
         'cbYoung.jpeg',
         'cbHorse.jpeg',
         'concreteWaveCover.jpeg'
     ];
-    
+
     // Create carousel items
     function createCarouselItems() {
         // Create two sets of images for seamless loop
@@ -90,27 +90,27 @@ document.addEventListener('DOMContentLoaded', function() {
             carouselImages.forEach((image, index) => {
                 const item = document.createElement('div');
                 item.className = 'carousel-item';
-                
+
                 const img = document.createElement('img');
                 img.src = `media/carousel/${image}`;
                 img.alt = `CB Skateboarding ${index + 1}`;
                 img.loading = 'lazy';
-                
+
                 item.appendChild(img);
                 carouselTrack.appendChild(item);
             });
         }
     }
-    
+
     createCarouselItems();
-    
+
     // Optional: Pause animation on hover for entire section
     const carouselSection = document.querySelector('.photo-carousel-section');
     if (carouselSection) {
         carouselSection.addEventListener('mouseenter', () => {
             carouselTrack.style.animationPlayState = 'paused';
         });
-        
+
         carouselSection.addEventListener('mouseleave', () => {
             carouselTrack.style.animationPlayState = 'running';
         });
@@ -146,7 +146,7 @@ window.addEventListener('scroll', function () {
 
 // Application form handler
 function showApplicationForm() {
-    alert('Application form coming soon! For now, email cb@cbcoaching.com with:\n\n1. Your skating experience\n2. Your goals\n3. Why you\'re ready for elite coaching\n4. Links to your skating videos');
+    alert('Elite Mentorship Application\n\nTo apply for 1-on-1 coaching with CB ($2,000/month), email cb@cbcoaching.com with:\n\n1. Current skating level & years of experience\n2. Competition history (if any)\n3. Your 6-month and 2-year goals\n4. Why you\'re ready to invest in elite coaching\n5. Links to 3-5 recent skating videos\n6. Preferred package (monthly, 3-month, or 6-month)\n\nApplications are reviewed within 48 hours. Only serious inquiries please.');
 }
 
 // Video player enhancement
@@ -198,7 +198,7 @@ document.querySelectorAll('.video-container video').forEach(video => {
     // Ensure iOS compatibility
     video.setAttribute('playsinline', '');
     video.setAttribute('webkit-playsinline', '');
-    
+
     // Add click to play/pause
     video.addEventListener('click', function () {
         if (video.paused) {
@@ -216,13 +216,13 @@ document.querySelectorAll('.video-container video').forEach(video => {
     video.addEventListener('canplay', function () {
         video.parentElement.classList.remove('loading');
     });
-    
+
     // Handle iOS video errors
     let errorCount = 0;
-    video.addEventListener('error', function(e) {
+    video.addEventListener('error', function (e) {
         errorCount++;
         console.error('Video error:', e, 'Attempt:', errorCount);
-        
+
         // If video fails on iOS, show a message
         if (errorCount >= 2) {
             const container = video.parentElement;
@@ -247,13 +247,13 @@ document.querySelectorAll('.video-container video').forEach(video => {
             `;
         }
     });
-    
+
     // iOS-specific video initialization
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
     if (isIOS) {
         // Try to preload the first frame
         video.load();
-        
+
         // Sometimes iOS needs a user interaction first
         document.addEventListener('touchstart', function videoInit() {
             video.load();
