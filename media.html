@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media & Interviews - CB Coaching</title>
+    <meta name="description"
+        content="Watch interviews, features, and media appearances of skateboarding legend Cara-Beth Burnside.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="media-styles.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">CB COACHING</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#coaching">Coaching</a></li>
+                <li><a href="media.html" class="active">Media</a></li>
+                <li><a href="index.html#apply">Apply Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="media-hero">
+        <div class="container">
+            <h1>Media & Interviews</h1>
+            <p>Explore CB's journey through decades of groundbreaking skateboarding</p>
+        </div>
+    </section>
+
+    <!-- Filter Tabs -->
+    <section class="media-filters">
+        <div class="container">
+            <div class="filter-tabs">
+                <button class="filter-tab active" data-filter="all">All Videos</button>
+                <button class="filter-tab" data-filter="interviews">Interviews</button>
+                <button class="filter-tab" data-filter="features">Features</button>
+                <button class="filter-tab" data-filter="tutorials">Tutorials</button>
+                <button class="filter-tab" data-filter="competitions">Competitions</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Gallery -->
+    <section class="video-gallery">
+        <div class="container">
+            <div class="gallery-grid" id="galleryGrid">
+
+                <!-- Featured Video - Vice Interview with Niece -->
+                <div class="video-card featured" data-category="interviews">
+                    <div class="video-info">
+                        <h3>VICE LIFE - Meet the Skate Icon Who Was the First Woman to Grace the Cover of Thrasher Mag
+                        </h3>
+                        <p class="video-description">An intimate conversation about skateboarding, family, and passing
+                            the torch to the next generation.</p>
+                        <div class="video-meta">
+                            <iframe width="560" height="315"
+                                src="https://www.youtube.com/embed/UzVT0UdC8bs?si=mcFsn7z3eaUqFBod"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hall of Fame Induction -->
+                <div class="video-card" data-category="features">
+                    <iframe width="350" height="137.5"
+                        src="https://www.youtube.com/embed/54wFAhl6-XA?si=QRoDkWsgO0tP2d5_" title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <div class="video-info">
+                        <h3>Skateboarding Hall of Fame Induction</h3>
+                        <p class="video-description">CB's emotional induction ceremony celebrating her pioneering impact
+                            on skateboarding.</p>
+                        <div class="video-meta">
+                            <span class="video-source">SHoF</span>
+                            <span class="video-duration">12:34</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Thrasher Cover Story -->
+                <div class="video-card" data-category="interviews">
+                    <div class="video-thumbnail" onclick="openVideoModal('thrasher-story')">
+                        <img src="https://img.youtube.com/vi/PLACEHOLDER/maxresdefault.jpg" alt="Thrasher Cover Story">
+                        <div class="play-overlay">
+                            <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                                <circle cx="30" cy="30" r="30" fill="rgba(255,255,255,0.9)" />
+                                <path d="M22 18L42 30L22 42V18Z" fill="#2c3e44" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>First Woman on Thrasher Cover</h3>
+                        <p class="video-description">The story behind the historic moment that changed skateboarding
+                            forever.</p>
+                        <div class="video-meta">
+                            <span class="video-source">Thrasher</span>
+                            <span class="video-duration">8:45</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- X Games Gold -->
+                <div class="video-card" data-category="competitions">
+                    <div class="video-thumbnail" onclick="openVideoModal('xgames-gold')">
+                        <img src="https://img.youtube.com/vi/PLACEHOLDER/maxresdefault.jpg" alt="X Games Gold">
+                        <div class="play-overlay">
+                            <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                                <circle cx="30" cy="30" r="30" fill="rgba(255,255,255,0.9)" />
+                                <path d="M22 18L42 30L22 42V18Z" fill="#2c3e44" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>X Games Gold Medal Run</h3>
+                        <p class="video-description">Watch CB's legendary gold medal performance at the X Games.</p>
+                        <div class="video-meta">
+                            <span class="video-source">ESPN</span>
+                            <span class="video-duration">5:23</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technique Breakdown -->
+                <div class="video-card" data-category="tutorials">
+                    <div class="video-thumbnail" onclick="openVideoModal('technique-breakdown')">
+                        <img src="https://img.youtube.com/vi/PLACEHOLDER/maxresdefault.jpg" alt="Technique Breakdown">
+                        <div class="play-overlay">
+                            <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                                <circle cx="30" cy="30" r="30" fill="rgba(255,255,255,0.9)" />
+                                <path d="M22 18L42 30L22 42V18Z" fill="#2c3e44" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>Vert Technique Masterclass</h3>
+                        <p class="video-description">CB breaks down the fundamentals of vert skating for aspiring pros.
+                        </p>
+                        <div class="video-meta">
+                            <span class="video-source">CB Coaching</span>
+                            <span class="video-duration">15:20</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Documentary Feature -->
+                <div class="video-card" data-category="features">
+                    <div class="video-thumbnail" onclick="openVideoModal('documentary')">
+                        <img src="https://img.youtube.com/vi/PLACEHOLDER/maxresdefault.jpg" alt="Documentary">
+                        <div class="play-overlay">
+                            <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                                <circle cx="30" cy="30" r="30" fill="rgba(255,255,255,0.9)" />
+                                <path d="M22 18L42 30L22 42V18Z" fill="#2c3e44" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>Pioneers: Women in Skateboarding</h3>
+                        <p class="video-description">A documentary exploring CB's role in paving the way for female
+                            skaters.</p>
+                        <div class="video-meta">
+                            <span class="video-source">Documentary</span>
+                            <span class="video-duration">28:15</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Podcast Interview -->
+                <div class="video-card" data-category="interviews">
+                    <div class="video-thumbnail" onclick="openVideoModal('podcast')">
+                        <img src="https://img.youtube.com/vi/PLACEHOLDER/maxresdefault.jpg" alt="Podcast">
+                        <div class="play-overlay">
+                            <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                                <circle cx="30" cy="30" r="30" fill="rgba(255,255,255,0.9)" />
+                                <path d="M22 18L42 30L22 42V18Z" fill="#2c3e44" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>The Nine Club Podcast</h3>
+                        <p class="video-description">Deep dive conversation about CB's career, challenges, and triumphs.
+                        </p>
+                        <div class="video-meta">
+                            <span class="video-source">The Nine Club</span>
+                            <span class="video-duration">1:45:30</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Competition -->
+                <div class="video-card" data-category="competitions">
+                    <div class="video-thumbnail" onclick="openVideoModal('recent-comp')">
+                        <img src="https://img.youtube.com/vi/PLACEHOLDER/maxresdefault.jpg" alt="Recent Competition">
+                        <div class="play-overlay">
+                            <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                                <circle cx="30" cy="30" r="30" fill="rgba(255,255,255,0.9)" />
+                                <path d="M22 18L42 30L22 42V18Z" fill="#2c3e44" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>Masters Competition Highlights</h3>
+                        <p class="video-description">CB shows she's still got it at the recent Masters competition.</p>
+                        <div class="video-meta">
+                            <span class="video-source">Competition</span>
+                            <span class="video-duration">7:12</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Modal -->
+    <div class="video-modal" id="videoModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeVideoModal()">&times;</span>
+            <div class="modal-video-container" id="modalVideoContainer">
+                <!-- Video will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 CB Coaching. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#">📷</a>
+                    <a href="#">🎬</a>
+                    <a href="#">✉️</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="media-script.js"></script>
+</body>
+
+</html>
