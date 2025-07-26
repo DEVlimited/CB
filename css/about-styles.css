@@ -1,0 +1,485 @@
+/* About Page Specific Styles */
+
+/* Active nav link */
+.nav-links a.active {
+    color: var(--pastel-green);
+}
+
+/* Hero Section */
+.about-hero {
+    background: linear-gradient(135deg, #ffffff 0%, var(--cream) 100%);
+    padding: 140px 0 80px;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+/* Portrait Styling */
+.portrait-frame {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 3/4;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.portrait-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.portrait-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--pastel-blue) 0%, var(--pastel-green) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 6rem;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+}
+
+.portrait-image:not([src]),
+.portrait-image[src=""] {
+    display: none;
+}
+
+/* Hero Content */
+.hero-intro h1 {
+    font-size: 4rem;
+    color: var(--dark-grey);
+    margin-bottom: 0.5rem;
+    letter-spacing: -2px;
+    line-height: 1;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: var(--pastel-green);
+    font-weight: 300;
+    letter-spacing: 3px;
+    margin-bottom: 2rem;
+}
+
+.hero-quote {
+    font-size: 1.25rem;
+    color: var(--text-light);
+    font-style: italic;
+    padding-left: 2rem;
+    border-left: 4px solid var(--pastel-green);
+}
+
+/* Legacy Stats */
+.legacy-stats {
+    background-color: var(--dark-grey);
+    padding: 60px 0;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+    text-align: center;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--pastel-green);
+    letter-spacing: -1px;
+}
+
+.stat-label {
+    font-size: 1rem;
+    color: var(--cream);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
+/* Story Section */
+.cb-story {
+    background-color: white;
+    padding: 100px 0;
+}
+
+.story-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.story-content h2 {
+    font-size: 3rem;
+    color: var(--dark-grey);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.story-lead {
+    font-size: 1.5rem;
+    color: var(--text-light);
+    margin-bottom: 3rem;
+    text-align: center;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.story-content p {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+}
+
+/* Timeline */
+.career-timeline {
+    background-color: var(--cream);
+    padding: 100px 0;
+}
+
+.career-timeline h2 {
+    font-size: 3rem;
+    color: var(--dark-grey);
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background-color: var(--pastel-green);
+    opacity: 0.3;
+}
+
+.timeline-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 16px;
+    height: 16px;
+    background-color: var(--pastel-green);
+    border-radius: 50%;
+    border: 4px solid var(--cream);
+    z-index: 1;
+}
+
+.timeline-item:nth-child(even) .timeline-year {
+    order: 2;
+    text-align: left;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    order: 1;
+    text-align: right;
+}
+
+.timeline-year {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--dark-grey);
+    align-self: center;
+    text-align: right;
+}
+
+.timeline-content h3 {
+    font-size: 1.5rem;
+    color: var(--dark-grey);
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content p {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Philosophy Section */
+.coaching-philosophy {
+    background-color: white;
+    padding: 100px 0;
+}
+
+.philosophy-content h2 {
+    font-size: 3rem;
+    color: var(--dark-grey);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.philosophy-lead {
+    font-size: 1.25rem;
+    color: var(--text-light);
+    text-align: center;
+    margin-bottom: 4rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.philosophy-pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.pillar {
+    text-align: center;
+    padding: 2rem;
+}
+
+.pillar h3 {
+    font-size: 1.5rem;
+    color: var(--dark-grey);
+    margin-bottom: 1rem;
+}
+
+.pillar p {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Passion Section */
+.passion-section {
+    background-color: var(--cream);
+    padding: 100px 0;
+}
+
+.passion-content h2 {
+    font-size: 3rem;
+    color: var(--dark-grey);
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.passion-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.passion-text p {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+}
+
+.passion-text blockquote {
+    margin: 2rem 0;
+    padding: 2rem;
+    background-color: white;
+    border-left: 4px solid var(--pastel-green);
+    font-style: italic;
+    font-size: 1.25rem;
+    color: var(--dark-grey);
+    line-height: 1.6;
+}
+
+.coaching-image {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.image-placeholder {
+    background: linear-gradient(135deg, var(--pastel-green) 0%, var(--pastel-blue) 100%);
+    aspect-ratio: 4/3;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.placeholder-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.coaching-image:not([src]),
+.coaching-image[src=""] {
+    display: none;
+}
+
+.coaching-image:not([src])+.image-placeholder,
+.coaching-image[src=""]+.image-placeholder {
+    display: flex;
+}
+
+/* About CTA */
+.about-cta {
+    background: linear-gradient(135deg, var(--dark-grey) 0%, #3a4f56 100%);
+    color: var(--cream);
+    text-align: center;
+    padding: 80px 0;
+}
+
+.about-cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.about-cta p {
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .hero-grid {
+        grid-template-columns: 300px 1fr;
+        gap: 3rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .philosophy-pillars {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .portrait-frame {
+        margin: 0 auto 3rem;
+        max-width: 300px;
+    }
+
+    .hero-intro h1 {
+        font-size: 3rem;
+    }
+
+    .hero-quote {
+        padding-left: 1.5rem;
+        margin: 0 auto;
+        max-width: 500px;
+    }
+
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-item {
+        grid-template-columns: 60px 1fr;
+        gap: 2rem;
+    }
+
+    .timeline-item::before {
+        left: 20px;
+    }
+
+    .timeline-item:nth-child(even) .timeline-year {
+        order: 1;
+        text-align: left;
+    }
+
+    .timeline-item:nth-child(even) .timeline-content {
+        order: 2;
+        text-align: left;
+    }
+
+    .timeline-year {
+        font-size: 1.5rem;
+        text-align: left;
+    }
+
+    .passion-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .about-cta h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Animations */
+.timeline-item {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s forwards;
+}
+
+.timeline-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.timeline-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.timeline-item:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.timeline-item:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.timeline-item:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.timeline-item:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
