@@ -1,0 +1,504 @@
+/* Boards Page Specific Styles */
+
+/* Active nav link */
+.nav-links a.active {
+    color: var(--pastel-green);
+}
+
+/* Boards Hero */
+.boards-hero {
+    background: linear-gradient(135deg, var(--dark-grey) 0%, #4a5f66 100%);
+    color: var(--cream);
+    padding: 140px 0 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.boards-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('media/skate-pattern.svg');
+    opacity: 0.05;
+    background-size: 200px;
+}
+
+.hero-badge {
+    display: inline-block;
+    background-color: var(--accent-gold);
+    color: var(--dark-grey);
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
+    font-size: 0.875rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+.boards-hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: -1px;
+}
+
+.boards-hero p {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+/* Brand Story */
+.brand-story {
+    background-color: var(--cream);
+    padding: 80px 0;
+}
+
+.story-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.story-content h2 {
+    font-size: 2.5rem;
+    color: var(--dark-grey);
+    margin-bottom: 1.5rem;
+}
+
+.story-content p {
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.story-content blockquote {
+    background-color: white;
+    padding: 2rem;
+    border-left: 4px solid var(--pastel-green);
+    margin: 2rem 0;
+    font-style: italic;
+    color: var(--dark-grey);
+}
+
+.story-content cite {
+    display: block;
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    color: var(--text-light);
+    font-style: normal;
+}
+
+.collab-image {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Board Collection */
+.board-collection {
+    background-color: white;
+    padding: 80px 0;
+}
+
+.boards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.board-card {
+    background-color: var(--cream);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+}
+
+.board-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.board-card.featured {
+    grid-column: span 1;
+    background: linear-gradient(135deg, #fff8f0 0%, #ffeedd 100%);
+    border: 2px solid var(--accent-gold);
+}
+
+.board-display {
+    position: relative;
+    padding: 2rem;
+    text-align: center;
+    background-color: white;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.board-img {
+    max-width: 80%;
+    max-height: 250px;
+    width: auto;
+    height: auto;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.15));
+    transition: transform 0.3s;
+}
+
+.board-card:hover .board-img {
+    transform: rotate(-5deg) scale(1.05);
+}
+
+.board-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: var(--pastel-blue);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.board-badge.new {
+    background-color: var(--accent-gold);
+    color: var(--dark-grey);
+}
+
+.board-info {
+    padding: 2rem;
+}
+
+.board-info h3 {
+    font-size: 1.5rem;
+    color: var(--dark-grey);
+    margin-bottom: 0.5rem;
+}
+
+.board-specs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.spec {
+    font-size: 0.875rem;
+    color: var(--pastel-blue);
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    background-color: rgba(168, 197, 213, 0.1);
+    border-radius: 15px;
+}
+
+.board-info p {
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.price-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: var(--dark-grey);
+}
+
+.collection-note {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 2rem;
+    background-color: var(--cream);
+    border-radius: 10px;
+}
+
+/* Info Card Section */
+.info-card-section {
+    background-color: var(--cream);
+    padding: 80px 0;
+}
+
+.card-display {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.card-content h2 {
+    font-size: 2.25rem;
+    color: var(--dark-grey);
+    margin-bottom: 1rem;
+}
+
+.card-content p {
+    color: var(--text-light);
+    margin-bottom: 2rem;
+    line-height: 1.7;
+}
+
+.card-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.card-feature {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.card-feature .icon {
+    font-size: 2rem;
+}
+
+.card-feature p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+/* Info Card Visual */
+.info-card-showcase {
+    position: relative;
+    height: 400px;
+    perspective: 1000px;
+}
+
+.info-card {
+    position: absolute;
+    width: 300px;
+    height: 400px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    transition: transform 0.3s;
+}
+
+.info-card.front {
+    z-index: 2;
+    transform: rotate(-5deg);
+}
+
+.info-card.back {
+    transform: rotate(5deg) translateX(150px);
+    z-index: 1;
+    background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+}
+
+.info-card-showcase:hover .front {
+    transform: rotate(-3deg) translateX(-20px);
+}
+
+.info-card-showcase:hover .back {
+    transform: rotate(3deg) translateX(170px);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.hst-branding {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    color: var(--pastel-blue);
+    font-weight: bold;
+}
+
+.edition-number {
+    color: var(--accent-gold);
+    font-weight: bold;
+}
+
+.info-card h3 {
+    font-size: 1.5rem;
+    color: var(--dark-grey);
+    margin-bottom: 1rem;
+}
+
+.achievements {
+    margin-bottom: 1.5rem;
+}
+
+.achievements p {
+    margin: 0.5rem 0;
+    font-size: 0.875rem;
+    color: var(--text-light);
+}
+
+.card-quote {
+    font-style: italic;
+    color: var(--pastel-green);
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+    font-size: 0.95rem;
+}
+
+.authenticity-seal {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.authenticity-seal img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 0.5rem;
+}
+
+.card-message {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--text-light);
+}
+
+/* Boards CTA */
+.boards-cta {
+    background: linear-gradient(135deg, var(--dark-grey) 0%, #3a4f56 100%);
+    color: var(--cream);
+    text-align: center;
+    padding: 80px 0;
+}
+
+.boards-cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.boards-cta p {
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.dealer-note {
+    margin-top: 2rem;
+    font-size: 0.875rem;
+    opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+
+    .story-grid,
+    .card-display {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .boards-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .boards-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .boards-hero p {
+        font-size: 1rem;
+    }
+
+    .board-card.featured {
+        grid-column: span 1;
+    }
+
+    .info-card-showcase {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    .info-card {
+        position: static;
+        transform: none !important;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .info-card.back {
+        transform: none !important;
+    }
+
+    .card-features {
+        grid-template-columns: 1fr;
+    }
+
+    .price-info {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .price-info .btn {
+        width: 100%;
+    }
+}
+
+/* Image placeholders */
+.board-img[src*="cb-classic-vert"]:not([src*="http"]),
+.board-img[src*="cb-street-legend"]:not([src*="http"]),
+.board-img[src*="cb-all-terrain"]:not([src*="http"]) {
+    width: 200px;
+    height: 250px;
+    background: linear-gradient(135deg, var(--pastel-green) 0%, var(--pastel-blue) 100%);
+    border-radius: 15px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.board-img[src*="cb-classic-vert"]:not([src*="http"])::after {
+    content: "🛹 Classic Vert";
+}
+
+.board-img[src*="cb-street-legend"]:not([src*="http"])::after {
+    content: "🛹 Street Legend";
+}
+
+.board-img[src*="cb-all-terrain"]:not([src*="http"])::after {
+    content: "🛹 All-Terrain";
+}
+
+.board-img:not([src*="http"])::after {
+    color: white;
+    font-weight: bold;
+    font-size: 1.25rem;
+    text-align: center;
+}
+
+.collab-image:not([src*="http"]) {
+    background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.collab-image:not([src*="http"])::after {
+    content: "CB × HST Collaboration";
+    color: var(--text-light);
+    font-size: 1.5rem;
+    font-weight: bold;
+}

@@ -132,6 +132,20 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Handle boards section link
+document.addEventListener('DOMContentLoaded', function () {
+    const boardsLink = document.querySelector('a[href="boards.html"]');
+    if (boardsLink && window.location.pathname.includes('index.html')) {
+        // Optional: Add hover effect or special styling
+        boardsLink.addEventListener('mouseenter', function () {
+            this.style.color = 'var(--accent-gold)';
+        });
+        boardsLink.addEventListener('mouseleave', function () {
+            this.style.color = '';
+        });
+    }
+});
+
 // Add scroll effect to header
 window.addEventListener('scroll', function () {
     const header = document.querySelector('header');
