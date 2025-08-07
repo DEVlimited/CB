@@ -160,7 +160,8 @@ window.addEventListener('scroll', function () {
 
 // Application form handler
 function showApplicationForm() {
-    alert('Elite Mentorship Application\n\nTo apply for 1-on-1 coaching with CB ($2,000/month), email cb@cbcoaching.com with:\n\n1. Current skating level & years of experience\n2. Competition history (if any)\n3. Your 6-month and 2-year goals\n4. Why you\'re ready to invest in elite coaching\n5. Links to 3-5 recent skating videos\n6. Preferred package (monthly, 3-month, or 6-month)\n\nApplications are reviewed within 48 hours. Only serious inquiries please.');
+    // Redirect to the application page
+    window.location.href = 'pages/apply.html';
 }
 
 // Video player enhancement

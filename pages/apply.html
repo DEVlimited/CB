@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply for Elite Coaching - CB Coaching</title>
+    <meta name="description"
+        content="Apply for elite skateboarding coaching with Cara-Beth Burnside. Premium 1-on-1 mentorship for serious athletes.">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../css/payment-styles.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">CB COACHING</div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="book.html">Book</a></li>
+                <li><a href="media.html">Media</a></li>
+                <li><a href="boards.html">Shop CB Boards</a></li>
+                <li><a href="apply.html" class="active">Apply Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Application Hero -->
+    <section class="application-hero">
+        <div class="container">
+            <h1>Apply for Elite Coaching</h1>
+            <p>Your journey to professional skateboarding starts here</p>
+        </div>
+    </section>
+
+    <!-- Progress Indicator -->
+    <div class="progress-bar">
+        <div class="container">
+            <div class="progress-steps">
+                <div class="step active" data-step="1">
+                    <div class="step-number">1</div>
+                    <div class="step-label">Application</div>
+                </div>
+                <div class="step" data-step="2">
+                    <div class="step-number">2</div>
+                    <div class="step-label">Review</div>
+                </div>
+                <div class="step" data-step="3">
+                    <div class="step-number">3</div>
+                    <div class="step-label">Payment</div>
+                </div>
+                <div class="step" data-step="4">
+                    <div class="step-number">4</div>
+                    <div class="step-label">Welcome</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <section class="application-section">
+        <div class="container">
+            <!-- Step 1: Application Form -->
+            <div class="form-step active" id="step1">
+                <div class="form-container">
+                    <h2>Elite Mentorship Application</h2>
+                    <p class="form-intro">This is more than coaching – it's a commitment to excellence. Please provide
+                        detailed information to help us understand your goals and readiness for elite-level training.
+                    </p>
+
+                    <form id="applicationForm" class="coaching-application">
+                        <!-- Personal Information -->
+                        <fieldset>
+                            <legend>Personal Information</legend>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">First Name *</label>
+                                    <input type="text" id="firstName" name="firstName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name *</label>
+                                    <input type="text" id="lastName" name="lastName" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Email *</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number *</label>
+                                    <input type="tel" id="phone" name="phone" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="age">Age *</label>
+                                    <input type="number" id="age" name="age" min="13" max="99" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="location">City, State/Country *</label>
+                                    <input type="text" id="location" name="location" required>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <!-- Skating Experience -->
+                        <fieldset>
+                            <legend>Skating Experience</legend>
+                            <div class="form-group">
+                                <label for="experience">Years of Experience *</label>
+                                <select id="experience" name="experience" required>
+                                    <option value="">Select...</option>
+                                    <option value="1-2">1-2 years</option>
+                                    <option value="3-5">3-5 years</option>
+                                    <option value="6-10">6-10 years</option>
+                                    <option value="10+">10+ years</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="level">Current Skill Level *</label>
+                                <select id="level" name="level" required>
+                                    <option value="">Select...</option>
+                                    <option value="intermediate">Intermediate - Consistent with basics</option>
+                                    <option value="advanced">Advanced - Competition ready</option>
+                                    <option value="expert">Expert - Sponsored/Semi-pro</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="competitions">Competition History</label>
+                                <textarea id="competitions" name="competitions" rows="3"
+                                    placeholder="List any competitions, rankings, or achievements"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="videoLinks">Video Links *</label>
+                                <textarea id="videoLinks" name="videoLinks" rows="3" required
+                                    placeholder="Provide 3-5 links to recent skating videos (YouTube, Instagram, etc.)"></textarea>
+                            </div>
+                        </fieldset>
+
+                        <!-- Goals & Commitment -->
+                        <fieldset>
+                            <legend>Goals & Commitment</legend>
+                            <div class="form-group">
+                                <label for="sixMonthGoals">6-Month Goals *</label>
+                                <textarea id="sixMonthGoals" name="sixMonthGoals" rows="3" required
+                                    placeholder="What do you want to achieve in the next 6 months?"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="twoYearGoals">2-Year Goals *</label>
+                                <textarea id="twoYearGoals" name="twoYearGoals" rows="3" required
+                                    placeholder="Where do you see yourself in 2 years?"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="whyCB">Why CB Coaching? *</label>
+                                <textarea id="whyCB" name="whyCB" rows="3" required
+                                    placeholder="Why are you ready to invest in elite coaching with CB?"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="commitment">Training Commitment *</label>
+                                <select id="commitment" name="commitment" required>
+                                    <option value="">Select...</option>
+                                    <option value="5-10">5-10 hours/week</option>
+                                    <option value="10-20">10-20 hours/week</option>
+                                    <option value="20-30">20-30 hours/week</option>
+                                    <option value="30+">30+ hours/week (full-time)</option>
+                                </select>
+                            </div>
+                        </fieldset>
+
+                        <!-- Program Selection -->
+                        <fieldset>
+                            <legend>Program Selection</legend>
+                            <div class="form-group">
+                                <label for="program">Preferred Program *</label>
+                                <select id="program" name="program" required onchange="updateProgramDetails()">
+                                    <option value="">Select a program...</option>
+                                    <optgroup label="Elite 1-on-1 Mentorship">
+                                        <option value="elite-monthly">Elite Monthly - $2,000/month</option>
+                                        <option value="elite-3month">Elite 3-Month Package - $5,100 (Save $900)</option>
+                                        <option value="elite-6month">Elite 6-Month Package - $9,000 (Save $3,000)
+                                        </option>
+                                    </optgroup>
+                                    <optgroup label="Community Programs">
+                                        <option value="foundations">Foundations - $97/month</option>
+                                        <option value="accelerator">Accelerator - $297/month</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                            <div id="programDetails" class="program-details" style="display: none;">
+                                <!-- Program details will be inserted here -->
+                            </div>
+                        </fieldset>
+
+                        <!-- Terms & Conditions -->
+                        <fieldset>
+                            <legend>Terms & Conditions</legend>
+                            <div class="terms-box">
+                                <h4>Coaching Agreement Terms</h4>
+                                <ul>
+                                    <li>All coaching programs require full commitment to the training schedule</li>
+                                    <li>Elite mentorship spots are limited and subject to approval</li>
+                                    <li>Package payments are due in full at the start of the program</li>
+                                    <li>Refunds are available within 14 days if you're not completely satisfied</li>
+                                    <li>You must be able to submit video content regularly for review</li>
+                                    <li>Coaching calls must be scheduled in advance and attended punctually</li>
+                                </ul>
+                            </div>
+                            <div class="form-group checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="terms" required>
+                                    <span>I agree to the coaching terms and conditions *</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="commitment_confirm" required>
+                                    <span>I confirm I'm ready to commit financially and personally to this program
+                                        *</span>
+                                </label>
+                            </div>
+                        </fieldset>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Submit Application</button>
+                            <p class="form-note">Applications are reviewed within 48 hours</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Step 2: Application Review -->
+            <div class="form-step" id="step2">
+                <div class="review-container">
+                    <div class="review-content">
+                        <div class="success-icon">✓</div>
+                        <h2>Application Submitted Successfully!</h2>
+                        <p>Thank you for applying to CB Coaching. Your application is now under review.</p>
+
+                        <div class="what-happens-next">
+                            <h3>What Happens Next?</h3>
+                            <ol>
+                                <li><strong>Application Review:</strong> CB personally reviews every application within
+                                    48 hours</li>
+                                <li><strong>Video Assessment:</strong> Your skating videos will be evaluated for
+                                    technique and potential</li>
+                                <li><strong>Decision Email:</strong> You'll receive an email with next steps</li>
+                                <li><strong>Welcome Call:</strong> Approved applicants will schedule an initial strategy
+                                    call</li>
+                            </ol>
+                        </div>
+
+                        <div class="confirmation-box">
+                            <p><strong>Application Reference:</strong> <span id="refNumber">CB-2024-0001</span></p>
+                            <p>A confirmation email has been sent to: <span id="confirmEmail"></span></p>
+                        </div>
+
+                        <div class="form-actions">
+                            <button class="btn btn-secondary" onclick="window.location.href='../index.html'">Return to
+                                Home</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3: Payment -->
+            <div class="form-step" id="step3">
+                <div class="payment-container">
+                    <h2>Complete Your Enrollment</h2>
+                    <p class="payment-intro">Congratulations! Your application has been approved. Complete your payment
+                        to begin your journey with CB.</p>
+
+                    <div class="payment-summary">
+                        <h3>Order Summary</h3>
+                        <div class="summary-item">
+                            <span class="item-name" id="selectedProgram">Elite 6-Month Package</span>
+                            <span class="item-price" id="selectedPrice">$9,000</span>
+                        </div>
+                        <div class="summary-item savings" id="savingsRow" style="display: none;">
+                            <span class="item-name">Package Savings</span>
+                            <span class="item-price" id="savingsAmount">-$3,000</span>
+                        </div>
+                        <div class="summary-total">
+                            <span>Total Due Today</span>
+                            <span id="totalAmount">$9,000</span>
+                        </div>
+                    </div>
+
+                    <div class="payment-methods">
+                        <h3>Payment Method</h3>
+                        <div class="payment-notice">
+                            <p>🔒 Secure payment powered by Stripe</p>
+                            <p>Click below to complete your payment securely through Stripe</p>
+                        </div>
+
+                        <!-- Stripe Payment Links (Replace with actual links when available) -->
+                        <div class="stripe-buttons">
+                            <button class="btn btn-primary stripe-pay" onclick="initiateStripePayment()">
+                                Pay with Stripe →
+                            </button>
+                        </div>
+
+                        <div class="payment-security">
+                            <p>✓ SSL Encrypted</p>
+                            <p>✓ PCI Compliant</p>
+                            <p>✓ Secure Checkout</p>
+                        </div>
+                    </div>
+
+                    <div class="refund-policy">
+                        <h4>14-Day Satisfaction Guarantee</h4>
+                        <p>If you're not completely satisfied with your coaching experience within the first 14 days,
+                            we'll provide a full refund. No questions asked.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 4: Welcome -->
+            <div class="form-step" id="step4">
+                <div class="welcome-container">
+                    <div class="welcome-content">
+                        <div class="celebration-icon">🎉</div>
+                        <h2>Welcome to CB Coaching!</h2>
+                        <p class="welcome-message">Your payment has been processed successfully. Get ready to transform
+                            your skating!</p>
+
+                        <div class="next-steps">
+                            <h3>Your First Steps</h3>
+                            <div class="step-cards">
+                                <div class="step-card">
+                                    <div class="step-icon">📅</div>
+                                    <h4>Schedule Your First Call</h4>
+                                    <p>Check your email for a link to book your initial strategy session with CB</p>
+                                </div>
+                                <div class="step-card">
+                                    <div class="step-icon">📹</div>
+                                    <h4>Submit Baseline Videos</h4>
+                                    <p>Upload current skating footage for your initial assessment</p>
+                                </div>
+                                <div class="step-card">
+                                    <div class="step-icon">📱</div>
+                                    <h4>Join the Community</h4>
+                                    <p>Get access to our exclusive coaching platform and resources</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="order-details">
+                            <h4>Order Confirmation</h4>
+                            <p><strong>Order Number:</strong> CB-2024-PAY-0001</p>
+                            <p><strong>Receipt:</strong> Sent to <span id="receiptEmail"></span></p>
+                        </div>
+
+                        <div class="form-actions">
+                            <button class="btn btn-primary" onclick="window.location.href='../index.html'">Go to
+                                Dashboard</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 CB Coaching. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#">📷</a>
+                    <a href="#">🎬</a>
+                    <a href="#">✉️</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/payment-script.js"></script>
+</body>
+
+</html>

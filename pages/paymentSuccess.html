@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Successful - CB Coaching</title>
+    <meta name="description" content="Welcome to CB Coaching! Your payment has been processed successfully.">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../css/payment-styles.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">CB COACHING</div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="book.html">Book</a></li>
+                <li><a href="media.html">Media</a></li>
+                <li><a href="boards.html">Shop CB Boards</a></li>
+                <li><a href="apply.html">Apply Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Success Hero -->
+    <section class="success-hero">
+        <div class="container">
+            <div class="success-content">
+                <div class="success-animation">
+                    <div class="success-checkmark">
+                        <svg viewBox="0 0 52 52">
+                            <circle cx="26" cy="26" r="25" fill="none" stroke="#4CAF50" stroke-width="2" />
+                            <path fill="none" stroke="#4CAF50" stroke-width="3" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+                        </svg>
+                    </div>
+                </div>
+                <h1>Payment Successful!</h1>
+                <p>Welcome to CB Coaching Elite Mentorship</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Next Steps -->
+    <section class="next-steps-section">
+        <div class="container">
+            <div class="success-details">
+                <h2>What Happens Next?</h2>
+                <p class="success-message">Your journey to professional skateboarding excellence begins now. Here's what
+                    to expect:</p>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-icon">📧</div>
+                        <div class="timeline-content">
+                            <h3>Within 24 Hours</h3>
+                            <p>You'll receive a welcome email with your onboarding packet and scheduling link for your
+                                first coaching call with CB.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon">📅</div>
+                        <div class="timeline-content">
+                            <h3>First Week</h3>
+                            <p>Schedule and complete your initial strategy session. CB will assess your current skills
+                                and create your personalized training roadmap.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon">🎥</div>
+                        <div class="timeline-content">
+                            <h3>Ongoing Support</h3>
+                            <p>Submit your first videos for analysis, join the exclusive coaching platform, and connect
+                                with CB for your regular check-ins.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="receipt-info">
+                    <h3>Order Details</h3>
+                    <div class="receipt-box">
+                        <p><strong>Order Number:</strong> <span id="orderNumber">CB-2024-PAY-0000</span></p>
+                        <p><strong>Program:</strong> <span id="programName">Elite Mentorship</span></p>
+                        <p><strong>Amount Paid:</strong> <span id="amountPaid">$0</span></p>
+                        <p><strong>Receipt:</strong> Sent to your email address</p>
+                    </div>
+                </div>
+
+                <div class="important-info">
+                    <h3>Important Information</h3>
+                    <ul>
+                        <li>Save your order number for future reference</li>
+                        <li>Check your email (including spam folder) for your welcome packet</li>
+                        <li>Join our exclusive Slack channel using the link in your welcome email</li>
+                        <li>Prepare 3-5 recent skating videos for your first session</li>
+                    </ul>
+                </div>
+
+                <div class="contact-support">
+                    <p>Questions? Email us at <a href="mailto:support@cbcoaching.com">support@cbcoaching.com</a></p>
+                </div>
+
+                <div class="success-actions">
+                    <a href="../index.html" class="btn btn-primary">Go to Homepage</a>
+                    <a href="https://calendly.com/cbcoaching" class="btn btn-secondary" target="_blank">Schedule First
+                        Call</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 CB Coaching. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#">📷</a>
+                    <a href="#">🎬</a>
+                    <a href="#">✉️</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Parse URL parameters from Stripe redirect
+        const urlParams = new URLSearchParams(window.location.search);
+        const sessionId = urlParams.get('session_id');
+
+        // Update order details from URL params (in production, fetch from backend)
+        if (sessionId) {
+            // Generate order number
+            const orderNumber = 'CB-2024-PAY-' + Math.floor(Math.random() * 9000 + 1000);
+            document.getElementById('orderNumber').textContent = orderNumber;
+
+            // In production, fetch actual order details from backend using session_id
+            // For demo, we'll use URL params
+            const program = urlParams.get('program') || 'Elite Mentorship';
+            const amount = urlParams.get('amount') || '2000';
+
+            document.getElementById('programName').textContent = decodeURIComponent(program);
+            document.getElementById('amountPaid').textContent = '$' + parseInt(amount).toLocaleString();
+        }
+
+        // Success checkmark animation
+        setTimeout(() => {
+            document.querySelector('.success-checkmark').classList.add('animate');
+        }, 100);
+    </script>
+
+    <style>
+        /* Success Page Specific Styles */
+        .success-hero {
+            background: linear-gradient(135deg, var(--dark-grey) 0%, #3a4f56 100%);
+            color: var(--cream);
+            padding: 100px 0 80px;
+            text-align: center;
+        }
+
+        .success-animation {
+            margin-bottom: 2rem;
+        }
+
+        .success-checkmark {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+        }
+
+        .success-checkmark svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .success-checkmark circle {
+            stroke-dasharray: 166;
+            stroke-dashoffset: 166;
+            stroke-width: 2;
+            stroke-miterlimit: 10;
+            fill: none;
+            animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+        }
+
+        .success-checkmark path {
+            transform-origin: 50% 50%;
+            stroke-dasharray: 48;
+            stroke-dashoffset: 48;
+            animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+        }
+
+        @keyframes stroke {
+            100% {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        .success-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .success-hero p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+        }
+
+        .next-steps-section {
+            background-color: var(--cream);
+            padding: 80px 0;
+        }
+
+        .success-details {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .success-message {
+            font-size: 1.125rem;
+            color: var(--text-light);
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .timeline {
+            margin: 3rem 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .timeline-icon {
+            font-size: 3rem;
+            flex-shrink: 0;
+        }
+
+        .timeline-content h3 {
+            color: var(--dark-grey);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content p {
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        .receipt-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 3rem 0;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .receipt-box {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+
+        .receipt-box p {
+            margin: 0.5rem 0;
+        }
+
+        .important-info {
+            background: #f0f7ff;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+
+        .important-info h3 {
+            color: var(--dark-grey);
+            margin-bottom: 1rem;
+        }
+
+        .important-info ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .important-info li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .important-info li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--pastel-green);
+            font-weight: bold;
+        }
+
+        .contact-support {
+            text-align: center;
+            margin: 2rem 0;
+            font-size: 1.125rem;
+        }
+
+        .contact-support a {
+            color: var(--pastel-blue);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .success-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-item {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .success-actions {
+                flex-direction: column;
+            }
+
+            .success-actions .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</body>
+
+</html>

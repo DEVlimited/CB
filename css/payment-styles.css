@@ -1,0 +1,629 @@
+/* Payment Page Specific Styles */
+
+/* Application Hero */
+.application-hero {
+    background: linear-gradient(135deg, var(--dark-grey) 0%, #3a4f56 100%);
+    color: var(--cream);
+    padding: 140px 0 60px;
+    text-align: center;
+}
+
+.application-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    letter-spacing: -1px;
+}
+
+.application-hero p {
+    font-size: 1.25rem;
+    opacity: 0.9;
+}
+
+/* Progress Bar */
+.progress-bar {
+    background-color: white;
+    border-bottom: 1px solid #eee;
+    padding: 30px 0;
+}
+
+.progress-steps {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.progress-steps::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 15%;
+    right: 15%;
+    height: 2px;
+    background-color: #e0e0e0;
+    z-index: 0;
+}
+
+.step {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    flex: 1;
+    cursor: default;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 0.5rem;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.step.active .step-number {
+    background-color: var(--pastel-green);
+    color: white;
+    transform: scale(1.1);
+}
+
+.step.completed .step-number {
+    background-color: var(--dark-grey);
+    color: white;
+}
+
+.step-label {
+    font-size: 0.875rem;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+.step.active .step-label {
+    color: var(--dark-grey);
+    font-weight: 600;
+}
+
+/* Application Section */
+.application-section {
+    background-color: var(--cream);
+    padding: 60px 0 100px;
+    min-height: 600px;
+}
+
+/* Form Steps */
+.form-step {
+    display: none;
+    animation: fadeIn 0.5s;
+}
+
+.form-step.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Form Container */
+.form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 3rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-intro {
+    font-size: 1.125rem;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Form Styling */
+.coaching-application fieldset {
+    border: none;
+    padding: 0;
+    margin-bottom: 2.5rem;
+}
+
+.coaching-application legend {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--dark-grey);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--pastel-green);
+    width: 100%;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    color: var(--dark-grey);
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="number"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+    background-color: white;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--pastel-green);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Program Details */
+.program-details {
+    background-color: var(--cream);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.program-details h4 {
+    color: var(--dark-grey);
+    margin-bottom: 1rem;
+}
+
+.program-details ul {
+    list-style: none;
+    padding: 0;
+}
+
+.program-details li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.program-details li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--pastel-green);
+    font-weight: bold;
+}
+
+/* Terms Box */
+.terms-box {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.terms-box h4 {
+    margin-bottom: 1rem;
+    color: var(--dark-grey);
+}
+
+.terms-box ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+    color: var(--text-light);
+}
+
+.terms-box li {
+    margin-bottom: 0.5rem;
+}
+
+/* Checkbox Group */
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: start;
+    gap: 0.75rem;
+    cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    cursor: pointer;
+    accent-color: var(--pastel-green);
+}
+
+/* Form Actions */
+.form-actions {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.form-note {
+    margin-top: 1rem;
+    color: var(--text-light);
+    font-size: 0.875rem;
+}
+
+/* Review Container */
+.review-container {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.review-content {
+    background-color: white;
+    padding: 3rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.success-icon {
+    font-size: 4rem;
+    color: var(--pastel-green);
+    margin-bottom: 1rem;
+}
+
+.what-happens-next {
+    text-align: left;
+    margin: 2rem 0;
+    padding: 2rem;
+    background-color: var(--cream);
+    border-radius: 8px;
+}
+
+.what-happens-next h3 {
+    color: var(--dark-grey);
+    margin-bottom: 1rem;
+}
+
+.what-happens-next ol {
+    padding-left: 1.5rem;
+}
+
+.what-happens-next li {
+    margin-bottom: 1rem;
+    color: var(--text-light);
+}
+
+.what-happens-next strong {
+    color: var(--dark-grey);
+}
+
+.confirmation-box {
+    background-color: #f0f7ff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+}
+
+.confirmation-box p {
+    margin: 0.5rem 0;
+}
+
+.confirmation-box span {
+    font-weight: 600;
+    color: var(--dark-grey);
+}
+
+/* Payment Container */
+.payment-container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.payment-intro {
+    text-align: center;
+    font-size: 1.125rem;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+}
+
+/* Payment Summary */
+.payment-summary {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.payment-summary h3 {
+    color: var(--dark-grey);
+    margin-bottom: 1.5rem;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.summary-item.savings {
+    color: var(--pastel-green);
+}
+
+.summary-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1.5rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--dark-grey);
+}
+
+/* Payment Methods */
+.payment-methods {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.payment-methods h3 {
+    color: var(--dark-grey);
+    margin-bottom: 1.5rem;
+}
+
+.payment-notice {
+    background-color: #f0f7ff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.payment-notice p {
+    margin: 0.5rem 0;
+    color: var(--dark-grey);
+}
+
+.stripe-buttons {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.stripe-pay {
+    font-size: 1.125rem;
+    padding: 1rem 3rem;
+}
+
+.payment-security {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+}
+
+.payment-security p {
+    color: var(--text-light);
+    font-size: 0.875rem;
+    margin: 0;
+}
+
+/* Refund Policy */
+.refund-policy {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.refund-policy h4 {
+    color: var(--dark-grey);
+    margin-bottom: 0.5rem;
+}
+
+.refund-policy p {
+    color: var(--text-light);
+    margin: 0;
+}
+
+/* Welcome Container */
+.welcome-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.welcome-content {
+    background-color: white;
+    padding: 3rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.celebration-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.welcome-message {
+    font-size: 1.25rem;
+    color: var(--text-light);
+    margin-bottom: 3rem;
+}
+
+.next-steps {
+    margin: 3rem 0;
+}
+
+.next-steps h3 {
+    color: var(--dark-grey);
+    margin-bottom: 2rem;
+}
+
+.step-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.step-card {
+    background-color: var(--cream);
+    padding: 2rem;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+}
+
+.step-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.step-card h4 {
+    color: var(--dark-grey);
+    margin-bottom: 0.5rem;
+}
+
+.step-card p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+.order-details {
+    background-color: #f0f7ff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+}
+
+.order-details h4 {
+    color: var(--dark-grey);
+    margin-bottom: 1rem;
+}
+
+.order-details p {
+    margin: 0.5rem 0;
+}
+
+/* Active nav link */
+.nav-links a.active {
+    color: var(--pastel-green);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .application-hero h1 {
+        font-size: 2rem;
+    }
+
+    .form-container {
+        padding: 2rem 1.5rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .progress-steps {
+        font-size: 0.875rem;
+    }
+
+    .step-label {
+        font-size: 0.75rem;
+    }
+
+    .step-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .payment-security {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+/* Form Validation Styles */
+input:invalid:not(:focus):not(:placeholder-shown),
+select:invalid:not(:focus):not(:placeholder-shown),
+textarea:invalid:not(:focus):not(:placeholder-shown) {
+    border-color: #ff6b6b;
+}
+
+input:valid:not(:focus):not(:placeholder-shown),
+select:valid:not(:focus):not(:placeholder-shown),
+textarea:valid:not(:focus):not(:placeholder-shown) {
+    border-color: var(--pastel-green);
+}
+
+/* Loading State */
+.btn.loading {
+    position: relative;
+    color: transparent;
+}
+
+.btn.loading::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    margin-left: -10px;
+    margin-top: -10px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spinner 0.8s linear infinite;
+}
+
+@keyframes spinner {
+    to {
+        transform: rotate(360deg);
+    }
+}

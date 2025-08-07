@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment FAQ - CB Coaching</title>
+    <meta name="description" content="Frequently asked questions about CB Coaching programs and payments.">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .faq-hero {
+            background: linear-gradient(135deg, var(--dark-grey) 0%, #3a4f56 100%);
+            color: var(--cream);
+            padding: 140px 0 60px;
+            text-align: center;
+        }
+
+        .faq-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .faq-content {
+            background-color: var(--cream);
+            padding: 80px 0;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-category {
+            margin-bottom: 3rem;
+        }
+
+        .faq-category h2 {
+            color: var(--dark-grey);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: box-shadow 0.3s;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--dark-grey);
+            background: white;
+            border: none;
+            width: 100%;
+            text-align: left;
+            transition: background-color 0.3s;
+        }
+
+        .faq-question:hover {
+            background-color: #f8f9fa;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--pastel-green);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s, padding 0.3s;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            max-height: 500px;
+        }
+
+        .faq-answer p {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .faq-answer ul {
+            color: var(--text-light);
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .faq-answer li {
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-cta {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-cta h3 {
+            color: var(--dark-grey);
+            margin-bottom: 1rem;
+        }
+
+        .contact-cta p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .nav-links a.active {
+            color: var(--pastel-green);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">CB COACHING</div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="book.html">Book</a></li>
+                <li><a href="media.html">Media</a></li>
+                <li><a href="boards.html">Shop CB Boards</a></li>
+                <li><a href="apply.html">Apply Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- FAQ Hero -->
+    <section class="faq-hero">
+        <div class="container">
+            <h1>Frequently Asked Questions</h1>
+            <p>Everything you need to know about CB Coaching programs and payments</p>
+        </div>
+    </section>
+
+    <!-- FAQ Content -->
+    <section class="faq-content">
+        <div class="container">
+            <div class="faq-container">
+                <!-- Payment & Pricing FAQs -->
+                <div class="faq-category">
+                    <h2>Payment & Pricing</h2>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            How do payments work for CB Coaching?
+                        </button>
+                        <div class="faq-answer">
+                            <p>All payments are processed securely through Stripe, a leading payment processor used by
+                                millions of businesses worldwide. You can pay with any major credit or debit card.</p>
+                            <p>For monthly programs, your card is charged automatically each month. For package programs
+                                (3 or 6 months), the full amount is charged upfront.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Why are package programs cheaper than monthly?
+                        </button>
+                        <div class="faq-answer">
+                            <p>Package programs offer significant savings as a reward for your commitment:</p>
+                            <ul>
+                                <li>3-Month Package: Save $900 (15% discount)</li>
+                                <li>6-Month Package: Save $3,000 (25% discount)</li>
+                            </ul>
+                            <p>Longer commitments also tend to produce better results, as they give us more time to work
+                                on comprehensive skill development and career strategy.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            What's your refund policy?
+                        </button>
+                        <div class="faq-answer">
+                            <p>We offer a 14-day satisfaction guarantee on all programs. If you're not completely
+                                satisfied within the first 14 days, we'll provide a full refund, no questions asked.</p>
+                            <p>After 14 days, refunds are considered on a case-by-case basis for exceptional
+                                circumstances.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Can I switch between programs?
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes! You can upgrade from community programs to Elite mentorship at any time (subject to
+                                availability). If you're in a monthly program, the change takes effect at your next
+                                billing cycle.</p>
+                            <p>For downgrades or other changes, please contact support to discuss options.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Application & Approval FAQs -->
+                <div class="faq-category">
+                    <h2>Application & Approval</h2>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Why do I need to apply for Elite coaching?
+                        </button>
+                        <div class="faq-answer">
+                            <p>Elite mentorship is limited to just 5 students per quarter to ensure maximum attention
+                                and results. The application process helps ensure:</p>
+                            <ul>
+                                <li>You're ready for intensive training</li>
+                                <li>Your goals align with what we offer</li>
+                                <li>You'll get maximum value from the program</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            How long does application review take?
+                        </button>
+                        <div class="faq-answer">
+                            <p>CB personally reviews every Elite application within 48 hours. You'll receive an email
+                                with the decision and next steps.</p>
+                            <p>Community program applications are typically approved within 24 hours.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            What if I'm not accepted for Elite coaching?
+                        </button>
+                        <div class="faq-answer">
+                            <p>If you're not quite ready for Elite coaching, we'll provide specific feedback on areas to
+                                develop. We often recommend:</p>
+                            <ul>
+                                <li>Starting with our Accelerator program</li>
+                                <li>Working on specific skills for 3-6 months</li>
+                                <li>Reapplying with updated videos</li>
+                            </ul>
+                            <p>Many successful Elite students started in community programs first!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Program Details FAQs -->
+                <div class="faq-category">
+                    <h2>Program Details</h2>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            What equipment do I need for online coaching?
+                        </button>
+                        <div class="faq-answer">
+                            <p>You'll need:</p>
+                            <ul>
+                                <li>A smartphone or camera to record skating videos</li>
+                                <li>Reliable internet for video calls</li>
+                                <li>A device with camera/microphone for coaching calls</li>
+                                <li>Your skateboard and safety gear</li>
+                            </ul>
+                            <p>That's it! We'll guide you on the best angles and techniques for video submissions.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            How do video reviews work?
+                        </button>
+                        <div class="faq-answer">
+                            <p>You'll submit videos of your skating through our platform. CB uses professional video
+                                analysis software to:</p>
+                            <ul>
+                                <li>Break down your technique frame-by-frame</li>
+                                <li>Add visual annotations and corrections</li>
+                                <li>Compare your progress over time</li>
+                                <li>Provide specific drills for improvement</li>
+                            </ul>
+                            <p>Elite students can submit unlimited videos. Other programs have monthly limits.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Can I pause my membership?
+                        </button>
+                        <div class="faq-answer">
+                            <p>Monthly subscriptions can be paused for up to 30 days once per year for injuries or
+                                emergencies. Contact support to arrange this.</p>
+                            <p>Package programs cannot be paused but include built-in flexibility for missed sessions.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact CTA -->
+                <div class="contact-cta">
+                    <h3>Still Have Questions?</h3>
+                    <p>We're here to help! Reach out and we'll get back to you within 24 hours.</p>
+                    <a href="mailto:support@cbcoaching.com" class="btn btn-primary">Contact Support</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 CB Coaching. All rights reserved. | <a href="terms.html"
+                        style="color: var(--cream);">Terms & Privacy</a> | <a href="faq.html"
+                        style="color: var(--cream);">FAQ</a></p>
+                <div class="social-links">
+                    <a href="#">📷</a>
+                    <a href="#">🎬</a>
+                    <a href="#">✉️</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+
+                question.addEventListener('click', () => {
+                    // Close all other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.backgroundColor = 'rgba(44, 62, 68, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.backgroundColor = 'var(--dark-grey)';
+                header.style.backdropFilter = 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>
